@@ -30,13 +30,16 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
     
     // filter image and return URL
     let localURL = await filterImageFromURL(image_url);
-    res.send(`Your URL is ${localURL}`);
+    res.sendFile(localURL);
 
     // delete the filtered URL.
-    fs.unlink(localURL, (err) => {
-      if (err) throw err;
-      console.log(`${localURL} has been removed.`);
-    })    
+    res.on('finish', () => {
+      fs.unlink(localURL, (err) => {
+        if (err) throw err;
+        console.log(`${localURL} has been removed.`);
+      })
+    })
+        
   });
 
   // @TODO1 IMPLEMENT A RESTFUL ENDPOINT
