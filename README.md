@@ -2,6 +2,7 @@
 
 I am enrolled in Udacity's Cloud Engineer Developer program and this is one of the required projects that I am working on.
 You can see live on AWS here.
+
 http://image-filter-zirena.us-east-1.elasticbeanstalk.com/imagefilter/?image_url={{enter_your_image_URL}}
 
 This Image Filtering Microservice is a simple cloud application developed alongside the Udacity Cloud Engineering Nanodegree. It allows users to register and log into a web client, post photos to the feed, and process photos using an image filtering microservice.
